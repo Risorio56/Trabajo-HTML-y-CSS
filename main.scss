@@ -1,0 +1,300 @@
+*{ 
+    margin:0;
+    padding:0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+@mixin boton ($bckg:coral, $border:black, $text:black){
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: $text;
+    background-color: $bckg;
+    border:1px solid $border;
+    border-radius: 5px;  
+    padding:5px 15px;
+}
+.whatsapp{
+    width:2.5rem;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:10;
+}
+//HEADER
+.navnames{     //para media queries
+    display:none;
+}
+.icon{
+    max-width:1.3rem;
+    min-width: 0.063rem;
+    
+    
+}
+.topheader {
+    background-color: black;
+    color: white;
+    height: 2rem; 
+}
+.topheader >* {
+    padding-top: 6px;
+    padding-left: 6px;
+}
+.navmenu {
+    display:flex;
+    justify-content: space-between; 
+    
+    
+}
+.navnames_icons1{
+    display:flex;
+    align-items: center;
+    gap:15px;
+    min-width: 0.063rem;
+    
+    
+}
+.navnames_icons2{
+    display:flex;
+    align-items: center;
+    gap:15px;
+    min-width: 0.063rem;
+    
+    
+    
+}
+.logo {
+    max-width:9.375rem;
+    min-width: 0.063rem;
+    
+}
+.header {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px; 
+    position:sticky;
+    top:0;
+    z-index: 3;
+}
+
+//MAIN SECTION
+//Seccion Landing
+.landing{
+    background-image: url("https://biciobiker.es/wp-content/uploads/2020/05/specialized-epic-2021-biciobiker-6.jpg");
+    padding-top: 250px;
+    padding-bottom: 200px;
+    padding-left: 50%;
+    background-size: cover;
+    background-position: center right;
+}
+.boton{
+    @include boton (#fff, red);
+}
+.boton2{
+    @include boton (#fff,black,);
+    font-weight: 500;
+}
+.landing_text{
+    color:white;
+    text-align: center;
+    max-width: 960px;  
+    
+}
+//titulo Compra
+.titulocompra{
+    text-align: center;
+}
+//Seccion Mas vendidos
+//prueba galeria fotos 1
+.section1{
+    display: flex;
+    width: 100%;
+    height: 430px;
+    
+}
+
+.fotogrande {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+.fotogrande:hover {
+    width: 300px;
+    opacity: 1;
+    cursor: (crosshair) ;
+    filter: contrast (120%);
+}
+//prueba galeria productos
+.section2{
+    overflow: auto ;
+    display: flex;
+    scroll-snap-align: x mandatory;
+}
+.section2 .fotogrande1 {
+    width: 400px; 
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+//Productos
+
+.article_img {
+    width:100%;
+    
+}
+.producto{
+    // background-color: yellow;
+    text-align: center;
+    opacity: .6;
+}
+span{ 
+    text-decoration: line-through;
+    color:red;
+}
+.seccion_producto{
+    gap: 20px;
+    padding: 20px;
+    // background-color: aqua;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.producto:hover{
+    opacity: 1 ;
+    
+}
+//seccion 4 fotos
+.sectionlanding2{
+    display:flex;
+    flex-direction: column;
+    // position: sticky;
+}
+.landing2{
+    background-image: url("https://biciobiker.es/wp-content/uploads/2020/05/specialized-epic-2021-biciobiker-6.jpg");
+    padding-top: 250px;
+    padding-bottom: 200px;
+    background-size: cover;
+    background-position: center;
+}
+.landing_text2{
+    color:white;
+    text-align: center;
+    max-width: 960px; 
+} 
+//seccion Newsletter
+
+.newsletterson{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #1b1b1b;
+    color: white;
+}
+
+.abutton{
+    @include boton(#fff,blue,black)
+}
+.div3 {
+    padding-top: 15px;  
+}
+.abutton {
+    padding: 5px 15px;
+}
+//footer
+.contenido {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333333;
+    color:#fff;
+
+    
+}
+ .socials {
+    list-style: none;
+    display:flex;
+    justify-content: center;
+    
+ }
+
+//Responsive Tablet
+
+ @media (min-width:920px){
+     
+        .navmenu {
+            display:flex;
+            align-items: center;
+            // justify-content: center;
+            
+            
+        }
+        .navnames {
+            order:2;
+            display:flex;
+            list-style: none;
+            gap:8px;
+            text-align: center ; 
+            font-weight: 900;
+            font-size: larger;
+            // padding-left: 3.125em;
+            
+        }
+        .navnames_icons1{
+            order:3;
+        }
+        .navnames_icons2{
+            order:4;
+        }
+        .icon1 {     //burgers
+            display:none;
+        }
+        
+        .logo {
+            order:1;  
+        }
+
+//Main compra
+
+.seccion_producto{
+    grid-template-columns: 1fr 1fr;       
+ }
+
+//seccion 4 fotos
+
+ .sectionlanding2{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    
+}
+.landing2{
+    background-image: url("https://biciobiker.es/wp-content/uploads/2020/05/specialized-epic-2021-biciobiker-6.jpg");
+    width: 50%;
+    background-size: cover;
+    background-position: center;  
+}
+
+}
+//Responsive Mobile
+
+@media (max-width:474px){
+
+   .section1{
+    display: none;
+   } 
+    //Productos
+.seccion_producto{
+    grid-template-columns: 1fr;
+}
+
+}
+@media (max-width: 200px){
+    .header{
+        display:none;
+    }
+}
